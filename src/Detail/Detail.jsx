@@ -6,7 +6,6 @@ import Button from '../ui/Button';
 import BannerDetail from './BannerDetail';
 import { convertPrice } from '../utils/helper';
 import { addItem, getCart } from '../cart/cartSlice';
-import UpdateQuantity from '../cart/UpdateQuantity';
 
 function Detail() {
     const [quantity, setQuantity] = useState();
@@ -62,7 +61,7 @@ function Detail() {
         }
         dispatch(addItem(newItem));
         alert('Sản phẩm đã được thêm vào giỏ hàng!');
-        setQuantity('')
+        setQuantity('');
 
         // navigate('/cart');
     };
@@ -89,7 +88,7 @@ function Detail() {
                             className="input hide-spin-buttons"
                             onChange={(e) => setQuantity(e.target.value)}
                         />
-                        <UpdateQuantity id={productId} />
+
                         <Button onClick={handleAddToCart}>Add to cart</Button>
                     </div>
                 </div>
